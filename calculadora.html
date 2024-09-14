@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Vigências</title>
+  <link rel="stylesheet" href="calculadora.css">
+  <script src="calculadora.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Calculadora de Distratos</h1>
+
+    <!-- Escolher número de vigências -->
+    <label for="numVigencias">Vigências do contrato em meses (em caso de renovação coloque o total):</label>
+    <input type="number" id="numVigencias" min="1" placeholder="Número de vigências">
+
+    <!-- Data de início do contrato -->
+    <label for="dataInicial">Data de início do contrato:</label>
+    <input type="date" id="dataInicial">
+
+    <!-- Valor do Fee (aplicado a todas as vigências) -->
+    <label for="fee">Valor do Fee:</label>
+    <input type="number" id="fee" placeholder="Digite o valor do Fee">
+
+    <!-- Último dia de prestação de serviço -->
+    <label for="ultimoDia">Último dia de prestação de serviço:</label>
+    <input type="date" id="ultimoDia">
+
+    <!-- Quantos fees foram pagos -->
+    <label for="feesPagos">Quantos fees foram pagos?</label>
+    <input type="number" id="feesPagos" min="0" placeholder="Número de fees pagos">
+
+    <!-- Aviso Prévio -->
+    <label for="avisoPrevio">Aviso prévio:</label>
+    <select id="avisoPrevio">
+      <option value="0">Sem aviso prévio</option>
+      <option value="30">Aviso prévio de 30 dias</option>
+      <option value="60">Aviso prévio de 60 dias</option>
+    </select>
+
+    <!-- Botão para gerar vigências e calcular -->
+    <button onclick="gerarVigencias()">Gerar Vigências e Calcular</button>
+
+    <!-- Exibição das vigências -->
+    <div id="vigenciasResultado"></div>
+
+    <!-- Exibição do resultado do cálculo -->
+    <div class="result" id="resultado"></div>
+  </div>
+
+</body>
+
+</html>
